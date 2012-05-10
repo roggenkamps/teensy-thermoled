@@ -1,0 +1,30 @@
+Thermoled uses the parts from the Teensyduino Tutorials 1 to 4 Parts
+Kit to create a gizmo that will change the color of the LED depending
+on the temperature of the thermistor.  The coefficients in the program
+are set so the LED is normally blue at room temperature (< 25 C).  If you grasp
+the thermistor between your thumb and forefinger, the LED will change
+to green ( 25 C < temp < 30 C)  and then red as its temperature
+increases above 30 C.
+
+I've not actually tested the calibration of this setup yet, although I
+did put some ice and water in a thin plastic bag and was able to get
+the temperature reading down to 0.8 degree C, which is very close to
+what the actual temperature should have been.  Not bad for a simple
+controller and thermistor.
+
+I built and tested this with the Teensy++ 2.0 microcontroller.  Your
+mileage may vary with the other models.
+
+Pinouts, using C Language pinout diagram:
+
+Pin
+
+B4 - 220 resistor - LED pin 3 (Blue)  -+
+B5 - 220 resistor - LED pin 4 (Red)   -+- LED pin 2 (ground) -+
+B6 - 220 resistor - LED pin 1 (Green) -+                      |
+                                                              |
+F1 ---------------+-- 10k resistor ---------------------------+
+                  |                                           |
+Vcc -- thermistor +                                           |
+                                                              |
+GND ----------------------------------------------------------+
